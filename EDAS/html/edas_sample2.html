@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: edas_sample2 - 전력수요예측을 위한 샘플 데이터셋</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for edas_sample2 {EDAS}"><tr><td>edas_sample2 {EDAS}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>edas_sample2 - 전력수요예측을 위한 샘플 데이터셋</h2>
+
+<h3>Description</h3>
+
+<p>This is a basic sample dataset (triaining/testing dataset). The data consists of the following features:
+1. collect_date - 날짜시간
+2. PowerUsage - 전력사용량
+3. Temperature - 외부 온도
+4. RH - 습도
+5. Entropy
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(edas_sample2)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A list contains training and testing data sets with 3 variables</p>
+
+
+<h3>See Also</h3>
+
+<p>Other EDAS-Data-Samples: <code><a href="edas_sample1.html">edas_sample1</a></code>,
+<code><a href="edas_sample3.html">edas_sample3</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(edas_sample2)
+trainData &lt;- edas_sample2$train
+testData &lt;- edas_sample2$test
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>EDAS</em> version 1.1.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

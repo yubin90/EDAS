@@ -1,0 +1,32 @@
+EDAS.clearAll           ClearAll
+EDAS.commit             EDAS 모델 commit
+EDAS.generate.config    EDAS 시스템 등록용 모델 설정 파일생성
+EDAS.getdata            EDAS ETL (Extraction-Transformation-Loader)
+                        추출한 학습(train)/테스트(test) 데이터 셋 로더
+EDAS.model.export       Export Model
+EDAS.model.ls           List Models in the shared repository
+EDAS.preprocess.datatypes
+                        EDAS Basic Preprocess - Utility Function for
+                        Setting Data Types
+                        (datetime(POSIXct)/factor/numeric/character)
+EDAS.preprocess.fillmissingdata
+                        Data Preprocessing - Fill Missing Data
+EDAS.preprocess.time.expand
+                        Data Preprocessing - Time Expansion
+EDAS.registerGraphicFunction
+                        모델 리포팅 - 커스텀 그래픽 연동
+EDAS.setChainProcess    EDAS 모델 연계성 설정 API
+EDAS.setIntegration     SetIntegration - 모델 결과 연동 API
+EDAS.showggplot         모델 리포팅 - ggplot 연동
+EDAS.showtable          모델 리포팅 - 테이블 데이터
+EDAS.transform.datefactor
+                        EDAS Data Transformation Method - date factor
+EDAS.transform.timefactor
+                        EDAS Data Transformation Method - time factor
+                        (Working/Non-Working Hours)
+edas_sample1            edas_sample1 - 전력수요예측을 위한 샘플
+                        데이터셋
+edas_sample2            edas_sample2 - 전력수요예측을 위한 샘플
+                        데이터셋
+edas_sample3            edas_sample3 - 전력수요예측을 위한 샘플
+                        데이터셋

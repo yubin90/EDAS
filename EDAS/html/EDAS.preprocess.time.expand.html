@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data Preprocessing - Time Expansion</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for EDAS.preprocess.time.expand {EDAS}"><tr><td>EDAS.preprocess.time.expand {EDAS}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Data Preprocessing - Time Expansion</h2>
+
+<h3>Description</h3>
+
+<p>datetime(POSIXct) 컬럼에서 날짜 범위(day)를 추출하여 <br /><br />
+주어진 데이터 수집주기 만큼 데이터를 생성합니다.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+EDAS.preprocess.time.expand(dt, datetimeCol = NULL, mins = 15)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>dt</code></td>
+<td>
+<p>data frame or data table</p>
+</td></tr>
+<tr valign="top"><td><code>datetimeCol</code></td>
+<td>
+<p>character datetime(POSIXct) column name</p>
+</td></tr>
+<tr valign="top"><td><code>mins</code></td>
+<td>
+<p>quick_periods minutes (<code>"lubridate"</code>)</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>data.table with extanded time series
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other EDAS-Preprocess-missingdata: <code><a href="EDAS.preprocess.fillmissingdata.html">EDAS.preprocess.fillmissingdata</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+startT &lt;- as.POSIXct("2015-01-01 00:00:00", format="%Y-%m-%d %H:%M:%S") #Start Time
+endT &lt;- as.POSIXct("2015-01-02 00:00:00", format="%Y-%m-%d %H:%M:%S") #End Time
+#2015-01-01 ~ 2015-01-02 (interval=15mins, 97)
+sampleDF &lt;- data.frame(dt=seq(startT, endT, by="15 mins"), power=rnorm(97,0,0.1))
+EDAS.preprocess.time.expand(sampleDF, datetimeCol="dt")
+
+sampleDF2 &lt;- data.frame(collect_date=seq(startT, endT, by="15 mins"), power=rnorm(97,0,0.1))
+EDAS.preprocess.time.expand(sampleDF2)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>EDAS</em> version 1.1.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

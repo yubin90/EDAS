@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: EDAS ETL (Extraction-Transformation-Loader) 추출한...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for EDAS.getdata {EDAS}"><tr><td>EDAS.getdata {EDAS}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>EDAS ETL (Extraction-Transformation-Loader) 추출한 학습(train)/테스트(test) 데이터 셋 로더</h2>
+
+<h3>Description</h3>
+
+<p>EDAS ETL에서 추출된 데이터를 읽어 올때 사용합니다. <br /><br />  RStudio에서는 임의로 지정된 경로에 저장되어있는 EDAS ETL 데이터 파일들을 읽어오며,
+EDAS Analytics 엔진에서는 데이터를 argument로 받아 처리하게 되어있습니다.<br /><br /> 'inputCols'를 사용하여 모델의 input 데이터 포맷을 임의로 정의 할 수 있으며 EDAS ETL에서 추출한 데이터를 읽어올때 사용됩니다.
+<br /><br /> *주의사항 - 정의된 컬럼 리스트와 ETL에서 추출한 데이터의 컬럼 길이가 다를 경우 오류를 발생시킵니다. <br />
+모델이 generic할 경우, 정의된 컬럼(inputCols)외에 추가적인 컬럼들에 대한 제악사항이 없을 경우 isModelGeneric 옵션을 통해 선정 해 줄수있습니다.<br /><br />
+하나의 data.table로 결과를 받고 싶을 경우 &quot;AsCombined&quot; 값을 TRUE(default=FALSE)로 설정하여 호출하시면 됩니다.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+EDAS.getdata(inputCols = NULL, isModelGeneric = TRUE, AsCombined = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>inputCols</code></td>
+<td>
+<p>A character vector of strings - 모델이 지원하는 input 데이터(training/test) 포맷을 정의 합니다.</p>
+</td></tr>
+<tr valign="top"><td><code>isModelGeneric</code></td>
+<td>
+<p>A boolean - 모델의 generic 여부 (기본값=TRUE)</p>
+</td></tr>
+<tr valign="top"><td><code>AsCombined</code></td>
+<td>
+<p>A boolean - 하나의 데이터 테이블만 리턴 할 경우</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>train - 학습 데이터 셋
+test - 테스트 데이터 셋
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other EDAS: <code><a href="EDAS.clearAll.html">EDAS.clearAll</a></code>,
+<code><a href="EDAS.commit.html">EDAS.commit</a></code>,
+<code><a href="EDAS.generate.config.html">EDAS.generate.config</a></code>,
+<code><a href="EDAS.registerGraphicFunction.html">EDAS.registerGraphicFunction</a></code>,
+<code><a href="EDAS.setChainProcess.html">EDAS.setChainProcess</a></code>,
+<code><a href="EDAS.setIntegration.html">EDAS.setIntegration</a></code>,
+<code><a href="EDAS.showggplot.html">EDAS.showggplot</a></code>,
+<code><a href="EDAS.showtable.html">EDAS.showtable</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+#Load the EDAS ETL data from R
+dataasets &lt;- EDAS.getdata()
+training_dataset &lt;- datasets$train #data frame #Training dataset
+testset_dataset &lt;- datasets$test #data frame #Test dataset
+inputCols &lt;- colnames(trainingset)
+inputCols
+## [1] "DT"        "PW"        "DoW"       "isWorking" "YI"        "Temp"      "RH"        "E"
+
+modelInputCols &lt;- c("Datetime")
+dataasets2 &lt;- EDAS.getdata(modelInputCols, isModelGenertic=TRUE) #Generic Model (Default)
+training_dataset2 &lt;- datasets$train
+colnames(training_dataset2)
+## [1] "Datetime"        "PW"        "DoW"       "isWorking" "YI"        "Temp"      "RH"        "E"
+
+EDAS.getdata(inputCols="Datetime") # Error
+
+#' modelInputCols &lt;- c("Datetime")
+dataasets2 &lt;- EDAS.getdata(modelInputCols, isModelGenertic=TRUE) #Generic Model (Default)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>EDAS</em> version 1.1.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

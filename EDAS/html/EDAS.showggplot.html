@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: 모델 리포팅 - ggplot 연동</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for EDAS.showggplot {EDAS}"><tr><td>EDAS.showggplot {EDAS}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>모델 리포팅 - ggplot 연동</h2>
+
+<h3>Description</h3>
+
+<p>분석 결과, 리포팅에 사용할 ggplot 기반의 챠트를 EDAS 시스템에 등록합니다.
+등록된 챠트는 commit(EDAS.commit)시 EDAS 화면에 보여집니다.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+EDAS.showggplot(resultplot)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>resultplot</code></td>
+<td>
+<p>- ggplot object</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p>Other EDAS: <code><a href="EDAS.clearAll.html">EDAS.clearAll</a></code>,
+<code><a href="EDAS.commit.html">EDAS.commit</a></code>,
+<code><a href="EDAS.generate.config.html">EDAS.generate.config</a></code>,
+<code><a href="EDAS.getdata.html">EDAS.getdata</a></code>,
+<code><a href="EDAS.registerGraphicFunction.html">EDAS.registerGraphicFunction</a></code>,
+<code><a href="EDAS.setChainProcess.html">EDAS.setChainProcess</a></code>,
+<code><a href="EDAS.setIntegration.html">EDAS.setIntegration</a></code>,
+<code><a href="EDAS.showtable.html">EDAS.showtable</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(ggplot2)
+edasDF &lt;- data.frame(x=c(1,2,3),y=c(1,2,3))
+ggplotExample &lt;- ggplot(edasDF) + geom_line(aes(x, y))
+EDAS.showplot(ggplotExample)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>EDAS</em> version 1.1.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

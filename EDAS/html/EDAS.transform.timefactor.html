@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: EDAS Data Transformation Method - time factor...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for EDAS.transform.timefactor {EDAS}"><tr><td>EDAS.transform.timefactor {EDAS}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>EDAS Data Transformation Method - time factor (Working/Non-Working Hours)</h2>
+
+<h3>Description</h3>
+
+<p>데이터를 주중/주말/특별한(Working/Non-Working/Special Days) 날로 구분하는 값을 생성합니다.
+주중을 정의 하는 요일들(1~7) numeric list, 기본값으로 월요일부터 금요일 (1~5)
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+EDAS.transform.timefactor(dt, datetimeCol = NULL, workinghours = 9:18)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>dt</code></td>
+<td>
+<p>data frame or data table</p>
+</td></tr>
+<tr valign="top"><td><code>datetimeCol</code></td>
+<td>
+<p>datetime(POSIXct) column name</p>
+</td></tr>
+<tr valign="top"><td><code>workinghours</code></td>
+<td>
+<p>list of numeric values - 업무시간을 정의 하는 list (0~23), 기본값으로 오전 9시부터 오후 6시(포함)까지</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<table summary="R valueblock">
+<tr valign="top"><td><code>indextable</code></td>
+<td>
+<p>정의된 주중/주말/특별한날의 index 값</p>
+</td></tr>
+<tr valign="top"><td><code>workinghours</code></td>
+<td>
+<p>정의된 업무시간 값(들)</p>
+</td></tr>
+<tr valign="top"><td><code>nonworkinghours</code></td>
+<td>
+<p>정의된 비업무시간 값(들)</p>
+</td></tr>
+<tr valign="top"><td><code>eval</code></td>
+<td>
+<p>input 데이터 셋(데이터 프레임)에 요일(dayOfweek) 값과 주중/주말/특별한 날을(datetype) 나타내는 값을 추가한 결과</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p>Other EDAS-Data-Transformation: <code><a href="EDAS.transform.datefactor.html">EDAS.transform.datefactor</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+#generate a sample dataset
+dataset &lt;- data.frame("Datetime"=seq(ISOdate(1900,1,1), ISOdate(1901,1,1), length.out=20),
+"x"=seq(1,10,length.out=20))
+
+EDAS.transform.timefactor(dataset, "Datetime")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>EDAS</em> version 1.1.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

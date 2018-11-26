@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: EDAS Basic Preprocess - Utility Function for Setting Data...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for EDAS.preprocess.datatypes {EDAS}"><tr><td>EDAS.preprocess.datatypes {EDAS}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>EDAS Basic Preprocess - Utility Function for Setting Data Types (datetime(POSIXct)/factor/numeric/character)</h2>
+
+<h3>Description</h3>
+
+<p>This utility function determines a data type for individual columns within the given data frame/data table.<br /><br />
+Individual column of datetime(POSIXct)/factor/numeric type<br /><br />.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+EDAS.preprocess.datatypes(dt, factorCols = NULL, datetimeCol = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>dt</code></td>
+<td>
+<p>data frame or data table</p>
+</td></tr>
+<tr valign="top"><td><code>factorCols</code></td>
+<td>
+<p>character vector defines a column list that wish to set as factor type</p>
+</td></tr>
+<tr valign="top"><td><code>datetimeCol</code></td>
+<td>
+<p>character datetime(POSIXct) column name</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<table summary="R valueblock">
+<tr valign="top"><td><code>datetimeCol</code></td>
+<td>
+<p>POSIXct 으로 변환된 컬럼</p>
+</td></tr>
+<tr valign="top"><td><code>numericCols</code></td>
+<td>
+<p>숫자로 변환된 컬럼(들)</p>
+</td></tr>
+<tr valign="top"><td><code>factorCols</code></td>
+<td>
+<p>factor로 변환된 컬럼(들)</p>
+</td></tr>
+<tr valign="top"><td><code>eval</code></td>
+<td>
+<p>데이터 타입이 변경된 input 데이터(data.frame/data.table) </p>
+</td></tr>
+</table>
+
+
+<h3>Examples</h3>
+
+<pre>
+datasets &lt;- EDAS.getdata(c("collect_date","PowerUsage"), isModelGeneric = TRUE)
+trainData &lt;- datasets$train
+
+colnames(trainData)
+// "collect_date" "PowerUsage"   "DoW"          "isWorking"    "YI"           "Temp"         "RH"           "E"
+
+expanded_Trainingset &lt;- EDAS.preprocess.time.expand(trainData)
+resultSet &lt;- str(EDAS.preprocess.datatypes(expanded_Trainingset))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>EDAS</em> version 1.1.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

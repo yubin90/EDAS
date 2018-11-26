@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: SetIntegration - 모델 결과 연동 API</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for EDAS.setIntegration {EDAS}"><tr><td>EDAS.setIntegration {EDAS}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>SetIntegration - 모델 결과 연동 API</h2>
+
+<h3>Description</h3>
+
+<p>모델 결과를 다른 시스템(예: BEMS)으로 연동 할 때 사용되는 API 입니다.
+모델러는 모델 결과 연동시 사용되는 uniqueID 및 message(최종결과)를 정의해야 합니다.
+Message는 result.txt파일에 저장되며 Timestamp(실행시점) 와 Message 컬럼을 가지는
+테이블 형태를 가지고 있습니다.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+EDAS.setIntegration(uniqueID = NULL, message = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>uniqueID</code></td>
+<td>
+<p>연동결과를 식별하는 unique ID (예:제주한라병원 공조기 가동시간)</p>
+</td></tr>
+<tr valign="top"><td><code>message</code></td>
+<td>
+<p>모델 결과(png,dat(=csv),log)외에 추가적으로 보내고자 하는 메세지 또는 값</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p>Other EDAS: <code><a href="EDAS.clearAll.html">EDAS.clearAll</a></code>,
+<code><a href="EDAS.commit.html">EDAS.commit</a></code>,
+<code><a href="EDAS.generate.config.html">EDAS.generate.config</a></code>,
+<code><a href="EDAS.getdata.html">EDAS.getdata</a></code>,
+<code><a href="EDAS.registerGraphicFunction.html">EDAS.registerGraphicFunction</a></code>,
+<code><a href="EDAS.setChainProcess.html">EDAS.setChainProcess</a></code>,
+<code><a href="EDAS.showggplot.html">EDAS.showggplot</a></code>,
+<code><a href="EDAS.showtable.html">EDAS.showtable</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+EDAS.setIntegration("H병원_단기전력수요예측_피크타임", "2017-01-01 12:00:00")
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>EDAS</em> version 1.1.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

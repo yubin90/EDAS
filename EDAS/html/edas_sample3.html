@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: edas_sample3 - 전력수요예측을 위한 샘플 데이터셋</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for edas_sample3 {EDAS}"><tr><td>edas_sample3 {EDAS}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>edas_sample3 - 전력수요예측을 위한 샘플 데이터셋</h2>
+
+<h3>Description</h3>
+
+<p>This is a basic sample dataset (triaining/testing dataset). The data consists of the following features:
+일 - Day
+시 - Hour
+분 - Minute
+사용량.kWh - PW (PowerUsage-kWh)
+최대수요.kW - MPW (MaxPowerUsage-kW)
+지상무효전력.kVarh. - GRP
+진상무효전력.kVarh. - RP
+지상역률... - GPF
+진상역률... - RPF
+요일 - DoW
+근무여부 - isWorking
+전일영향 - YI
+기온 (℃)  - T (Temperature)
+습도 (
+엔탈피(kJ/kg) - E (enthalpy)
+HD1
+CD1
+HD2
+CD2
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+data(edas_sample3)
+</pre>
+
+
+<h3>Format</h3>
+
+<p>A list contains training and testing data sets with 3 variables</p>
+
+
+<h3>Details</h3>
+
+<p>DT     PW    MPW   GRP RP GPF RPF DoW isWorking YI    T   RH         E  HD1 CD1  HD2 CD2
+1 2015-01-01 00:15:00 171.36 685.44 21.60  0 199   3   5         0  2 -6.9 0.31 -5.316989 24.9   0 22.9   0
+2 2015-01-01 00:30:00 167.76 671.04 20.16  0 207   3   5         0  2 -6.9 0.31 -5.316989 24.9   0 22.9   0
+...
+-참고-
+진상이란 -교류 전기에서 용량성부하(콘덴서 용량이 포함된 부하)에 의해 공급 전압 위상에 비해 소비전류 위상이 앞서는 상태를 말하는 것입니다.
+지상이란 - 교류 전기에서 유도성 부하(코일성분의 인덕터 용량이 포함된 부하)에 의해 공급 전압 위상에 비해 소비전류 위상이 뒤지는 상태를 말하는 것입니다.
+역률이란 - 교류전기는 직류와는 다르게 전압위상이 시간에 따라 +/- 가 바뀌고 있으므로, 소비전류 위상도 이에 따라 일치해야 전기를 완전하게 소비하는데, 전기히터와 같이 순 저항성 부하에서는 그 위상이 일치하게되며, 이때의 역률은 100
+예로들어 역률이 50
+무효전력 - 전류위상 불일치에 의한 부하에서 소비되지 못하고  전기 공급측으로 되돌아 가는 전력입니다.
+역률개선- 지상역률이 나빠진 경우는 전기 배전반에 설치된 콘덴서를 전원에 병렬 연결하면 개선됩니다.
+단 - 역률이 나쁠수록 더 많은 콘덴서가 병렬로 접속이 되야하며, - 지상 부하의 소비전력이 늘어날수록 더 많은 콘덴서가 필요합니다.
+진상역율이 나빠진 경우는 전원과 병렬로 인덕터를 병렬 접속해야 합니다.
+-그용량은 지상일경우의 콘덴서와 같이 증감 되어야 합니다.
+진상 역률과 지상역율이 동시에 나빠질 수는 없으며, 한쪽이 나쁘면 그 상태에서는 나쁜쪽만 생각하시면 됩니다.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other EDAS-Data-Samples: <code><a href="edas_sample1.html">edas_sample1</a></code>,
+<code><a href="edas_sample2.html">edas_sample2</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+data(edas_sample3)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>EDAS</em> version 1.1.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

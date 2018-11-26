@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Data Preprocessing - Fill Missing Data</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for EDAS.preprocess.fillmissingdata {EDAS}"><tr><td>EDAS.preprocess.fillmissingdata {EDAS}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Data Preprocessing - Fill Missing Data</h2>
+
+<h3>Description</h3>
+
+<p>결측치(missing data)를 처리하는 기본적인 함수들(전값/평균/다음값)을 제공하는 API 입니다.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+EDAS.preprocess.fillmissingdata(dt, how = c("average", "prior", "next"))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>dt</code></td>
+<td>
+<p>- data frame or data table</p>
+</td></tr>
+<tr valign="top"><td><code>how</code></td>
+<td>
+<p>- a method used to fill the missing data within the dataframe: prior(전값),average(평균) and next(다음값)</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p>Other EDAS-Preprocess-missingdata: <code><a href="EDAS.preprocess.time.expand.html">EDAS.preprocess.time.expand</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## d
+d &lt;- EDAS.preprocess.fillmissingdata()
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>EDAS</em> version 1.1.1 <a href="00Index.html">Index</a>]</div>
+</body></html>

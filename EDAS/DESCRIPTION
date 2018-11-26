@@ -1,0 +1,22 @@
+Package: EDAS
+Type: Package
+Title: EDAS R Package
+Version: 1.1.1
+Author: person(given = "Yong Jin", 
+    family="Lee",email = "yjlee@mobigen.com", role = c("aut", "cre"))
+Maintainer: Yong Jin Lee <yjlee@mobigen.com>
+Description: 
+      EDAS R library (Standard Development Interface for EDAS System) 
+      The package provides a list of a functionality to integrate with the EDAS-ETL and EDAS-Analysis Manager 
+      RStudio와 EDAS (Analysis Manager)에서 구동이 가능하게 해주는 middlware 역활을 수행한다. 
+Depends: R (>= 3.2.0)
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Imports: ggplot2 (>= 2.2.1), data.table (>= 1.10.4), plyr (>= 1.8.4),
+        optparse (>= 1.3.2), grDevices (>= 3.3.2), utils (>= 3.3.2),
+        jsonlite (>= 1.2), lubridate (>= 1.6.0), zoo (>= 1.7.13)
+NeedsCompilation: no
+Packaged: 2017-11-21 08:30:22 UTC; jingdol
+Built: R 3.4.1; ; 2017-11-21 08:42:45 UTC; unix
